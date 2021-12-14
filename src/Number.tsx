@@ -6,7 +6,7 @@ interface IProps {
 }
 
 const Container = styled.span<{ isBlue: boolean }>`
-  color: ${(props) => (props.isBlue ? 'blue' : 'black')};
+  color: ${(props) => (props.isBlue ? props.theme.blueColor : 'black')};
 `;
 
 const Number = ({ count }: IProps) => (
