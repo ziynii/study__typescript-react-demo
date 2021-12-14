@@ -5,8 +5,12 @@ interface IProps {
   count: number;
 }
 
-const Container = styled.span``;
+const Container = styled.span<{ isBlue: boolean }>`
+  color: ${(props) => (props.isBlue ? 'blue' : 'black')};
+`;
 
-const Number = ({ count }: IProps) => <Container>{count}</Container>;
+const Number = ({ count }: IProps) => (
+  <Container isBlue={count > 5}>{count}</Container>
+);
 
 export default Number;
